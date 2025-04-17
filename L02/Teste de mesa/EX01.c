@@ -13,3 +13,20 @@ Simulando o trecho de código abaixo, qual(ais) será(ão) a(s) saída(s) se as 
 10 printf("%d", N);
 11 ...
 */
+
+#include <stdio.h>
+
+int main () {
+    int R = 23, U = 4, N;
+
+    N = R;
+
+    R += U;
+    U = R - U;
+    R-= U;
+
+    N /= U;
+
+    printf("%d", N);
+    return 0;
+}

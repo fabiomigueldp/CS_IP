@@ -36,3 +36,20 @@ Input   | Resultado
 --------|-----------
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+    int n;
+    scanf("%d", &n);
+
+    double x = n > 0 ? n : 1;
+    for (int i = 0; i < 20; i++) {
+        x = (x + n / x) / 2.0;
+    }
+
+    printf("%.2f\n", x);
+    long long sq = (long long)n * n;
+    printf("%lld\n", sq);
+    return 0;
+}

@@ -8,3 +8,15 @@ Simulando o trecho de código abaixo, qual(ais) será(ão) a(s) saída(s) se as 
 05 printf("%d", O);
 06 ...
 */
+#include <stdio.h>
+
+int main () {
+    int D = 56, A = 76, N, O;
+
+    N = (3 * D + A) / A ;
+    O = (A + D) * 3 / N + N % D;
+
+    printf("%d", O);
+
+    return 0;
+}

@@ -73,3 +73,23 @@ Input   | Resultado
 --------|-----------
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+    int x2, y2;
+    scanf("%d", &x2);
+    scanf("%d", &y2);
+
+    int dx = x2 < 0 ? -x2 : x2;
+    int dy = y2 < 0 ? -y2 : y2;
+
+    int costx = (dx % 2) ? dx * 2 : dx;
+    int costy = (dy % 2) ? dy * 2 : dy;
+
+    int remx = 100 - costx;
+    int remy = 100 - costy;
+
+    printf("%d\n%d\n", remx, remy);
+    return 0;
+}

@@ -10,3 +10,16 @@ Simulando o trecho de código abaixo, qual(ais) será(ão) a(s) saída(s) se as 
 07 printf("%d %d", I, P);
 08 ...
 */
+#include <stdio.h>
+
+int main () {
+    int I = 5, P = 3;
+
+    I = 5*(I/5) + (I%5);
+    P = 5*P/5;
+    P += P%5;
+
+    printf("%d %d", I, P);
+
+    return 0;
+}

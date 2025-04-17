@@ -1,9 +1,12 @@
 /*
 DESCRIÇÃO
-Yagoo é o CEO de uma famosa empresa e precisa de ajuda para construir casas ou prédios. Ele já planejou qual vai ser o tamanho das construções que vai fazer, mas ainda não sabe quantos tijolos serão necessários para isso, então decidiu lhe contratar para fazer um programa que calcule isso para ele. Calcule o número necessário de tijolos para as quatro paredes de uma construção, lembrando que ele sempre deve ser arredondado para cima.
+Yagoo é o CEO de uma famosa empresa e precisa de ajuda para construir casas ou prédios. Ele já planejou qual vai ser o tamanho das construções que vai fazer, mas ainda não 
+sabe quantos tijolos serão necessários para isso, então decidiu lhe contratar para fazer um programa que calcule isso para ele. Calcule o número necessário de tijolos para as 
+quatro paredes de uma construção, lembrando que ele sempre deve ser arredondado para cima.
 
 ENTRADA
-A entrada é composta por duas linhas. A primeira contém três números separados por espaço, essas são as medidas de largura, comprimento e altura da construção em metros. A segunda contém as medidas dos tijolos, em centímetros, que vão ser usados para a construção.
+A entrada é composta por duas linhas. A primeira contém três números separados por espaço, essas são as medidas de largura, comprimento e altura da construção em metros. 
+A segunda contém as medidas dos tijolos, em centímetros, que vão ser usados para a construção.
 
 SAÍDA
 A saída do programa será apenas um número contendo a quantidade de tijolos necessários para construir as quatro paredes de uma construção e uma quebra de linha no final ("\n").
@@ -57,3 +60,28 @@ Input                   | Resultado
 ------------------------|-----------
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+    double largura_m, comprimento_m, altura_m;
+    double tijolo_l_cm, tijolo_c_cm;
+
+    scanf("%lf %lf %lf", &largura_m, &comprimento_m, &altura_m);
+    scanf("%lf %lf", &tijolo_l_cm, &tijolo_c_cm);
+
+    long long l_cm = (long long)(largura_m * 100.0 + 0.5);
+    long long c_cm = (long long)(comprimento_m * 100.0 + 0.5);
+    long long h_cm = (long long)(altura_m * 100.0 + 0.5);
+
+    long long P = 2LL * (l_cm + c_cm) * h_cm;
+
+    long long t1 = (long long)(tijolo_l_cm * 100.0 + 0.5);
+    long long t2 = (long long)(tijolo_c_cm * 100.0 + 0.5);
+    long long N = t1 * t2;
+
+    long long qtd = (P * 10000LL + N - 1) / N;
+
+    printf("%lld\n", qtd);
+    return 0;
+}

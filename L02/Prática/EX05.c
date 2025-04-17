@@ -52,3 +52,20 @@ Input                Resultado
 ---------------------|------------
 
 */
+
+#include <stdio.h>
+
+int main() {
+
+    int a, b, c;
+    float x;
+
+    // f(x) = ax² + bx + c
+
+    scanf("%d %d %d", &a, &b, &c);
+    scanf ("%f", &x);
+
+    printf("%.2f\n", a*x*x + b*x + c);
+
+    return 0;
+}

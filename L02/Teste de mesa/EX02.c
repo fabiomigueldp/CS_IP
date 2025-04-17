@@ -9,3 +9,15 @@ Simulando o trecho de código abaixo, qual(ais) será(ão) a(s) saída(s) se a v
 06
 07 ...
 */
+#include <stdio.h>
+
+int main () {
+    int N = 1, P;
+
+    P = (3*N-1)/2 + N*3 % 50;
+    P += P/2*3 - 1/4;
+
+    printf("%d", P);
+
+    return 0;
+}
