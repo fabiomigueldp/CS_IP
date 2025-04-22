@@ -71,4 +71,55 @@
     D
 */
 
+#include <stdio.h>
 
+int main() {
+    int consumo, blocos;
+    char bandeira;
+    double tarifa_base, valor_bandeira, subtotal, percentual, valor_total;
+
+    scanf(" %d %c", &consumo, &bandeira);
+
+    blocos = consumo / 100;
+
+    tarifa_base = consumo * 0.429;
+
+    switch (bandeira) {
+        case 'G':
+            valor_bandeira = 0.00 * blocos;
+            break;
+        case 'Y':
+            valor_bandeira = 0.996 * blocos;
+            break;
+        case 'R':
+            valor_bandeira = 4.599 * blocos;
+            break;
+        case 'D':
+            valor_bandeira = 7.571 * blocos;
+            break;
+        default:
+            printf("entrada inválida!");
+            return 0;
+    }
+
+    subtotal = tarifa_base + valor_bandeira;
+
+    if (consumo <= 40) {
+        percentual = 0.00;
+    } 
+    else if (consumo <= 100) {
+        percentual = 0.07;
+    } 
+    else if (consumo <= 250) {
+        percentual = 0.11;
+    } 
+    else {
+        percentual = 0.15;
+    }
+
+    valor_total = subtotal + subtotal * percentual;
+
+    printf("R$ %.2f", valor_total);
+
+    return 0;
+}
